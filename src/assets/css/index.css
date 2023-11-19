@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Nunito:wght@400;800&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    background-color: #fcd20b;
+}
+
+/*Navbar*/
+.poke-ball {
+    margin-left: 2rem;
+    width: 50px;
+}
+.poke-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 87, 57);
+    padding: 1rem;
+}
+
+h1 {
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 60px;
+    color: rgb(48, 96, 183);
+    background-color: #fcd20b;
+    text-align: center;
+    width: 100%;
+}
+
+.poke-active {
+    color: rgb(48, 96, 183);
+    font-weight: 800;
+    text-decoration: none;
+}
+.poke-inactive {
+    color: #fcd20b;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/*Home*/
+h1 {
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 70px;
+    color: rgb(48, 96, 183);
+    background-color: #fcd20b;
+    text-align: center;
+    width: 100%;
+}
+
+h5 {
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 30px;
+    color: #fcd20b;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(255, 87, 57);
+    padding: 4rem;
+    margin-top: auto;
+}
+
+.poke-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.poke-pika {
+    width: 60%;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+a {
+    text-align: center;
+}
+
+.text-message {
+    text-align: center;
+    font-size: 25px;
+}
+.btn-message {
+    font-family: "Nunito", sans-serif;
+    padding: 1rem;
+    background-color: rgb(255, 87, 57);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(48, 96, 183);
+    color: #fcd20b;
+}
+.btn-card {
+    font-family: "Nunito", sans-serif;
+    padding: 1rem;
+    background-color: rgb(48, 96, 183);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 87, 57);
+    color: #fcd20b;
+}
+
+/*Selector*/
+.poke-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.poke-form {
+    background-color: #fcd20b;
+    font-family: "Nunito", sans-serif;
+    padding: 0.5rem;
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(48, 96, 183);
+    text-align: center;
+}
+button {
+    margin-top: 2rem;
+}
+.btn-poke {
+    font-family: "Nunito", sans-serif;
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 87, 57);
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(48, 96, 183);
+    color: #fcd20b;
+}
+
+/*Card*/
+.btn-link {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+}
+.poke-container-card {
+    border: 2px solid rgb(255, 87, 57);
+    border-radius: 30px;
+    background-color: rgb(48, 96, 183);
+    width: 80%;
+    margin: auto;
+}
+.poke-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(48, 96, 183);
+    width: 60%;
+    margin: auto;
+}
+.poke-img {
+    border: 2px solid #fcd20b;
+    border-radius: 30px;
+    background-color: rgb(255, 87, 57);
+    padding: 2rem 3rem;
+    width: 200px;
+}
+.poke-title {
+    background: rgb(48, 96, 183);
+    color: #fcd20b;
+}
+.poke-info {
+    display: flex;
+    flex-direction: column;
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 25px;
+    color: #fcd20b;
+    margin-left: 2rem;
+}
+.poke-details {
+    display: flex;
+    flex-direction: row;
+}
+p {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 540px) {
+    /*Card*/
+    .poke-container-card {
+        border: 2px solid rgb(255, 87, 57);
+        border-radius: 30px;
+        background-color: rgb(48, 96, 183);
+        width: 80%;
+        margin: auto;
+    }
+    .poke-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(48, 96, 183);
+        width: 50%;
+        margin: auto;
+    }
+    .poke-img {
+        width: 150px;
+    }
+
+    .poke-info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Londrina Shadow", sans-serif;
+        font-size: 25px;
+        color: #fcd20b;
+        margin-left: 2rem;
+    }
+    .poke-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
