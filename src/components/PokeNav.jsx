@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
 export default function PokeNav() {
@@ -6,9 +6,9 @@ export default function PokeNav() {
     return (
         <header>
             <Navbar className="poke-nav">
-                <NavLink to="/">
+                <Link to="/">
                     <img className="poke-ball" src="../icons/pokeball.png" alt="Pokeball" />
-                </NavLink>
+                </Link>
 
                 <Container>
                     <Nav>

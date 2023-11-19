@@ -6,23 +6,26 @@ const PokeCard = () => {
     const [pokes, setPokes] = useState();
 
     useEffect(() => {
-        const getPokemons = async () => {
-            try {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
-                const json = await response.json();
-
-                setPokes(json);
-            } catch (error) {
-                {
-                    `Ocurrió un error`;
-                }
-            }
-        };
         getPokemons();
     }, [setPokes]);
+    const getPokemons = async () => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+            const json = await response.json();
+
+            setPokes(json);
+        } catch (error) {
+            {
+                `Ocurrió un error`;
+            }
+        }
+    };
+
     if (!pokes) return <></>;
 
     const { sprites, name, height, weight, stats } = pokes;
+    const title = { name };
+
     return (
         <>
             <div className="btn-link">
@@ -35,7 +38,7 @@ const PokeCard = () => {
             </div>
 
             <div className="poke-container-card">
-                <h1 className="poke-title">{name}</h1>
+                <h1 className="poke-title">{title.name[0].toUpperCase() + title.name.slice(1).toLowerCase()}</h1>
                 <div className="poke-card">
                     <img className="poke-img" src={sprites.other.dream_world.front_default} alt={name}></img>
 

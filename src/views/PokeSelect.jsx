@@ -8,21 +8,21 @@ const PokeSelect = () => {
     const [selectPoke, setSelectPoke] = useState("");
 
     useEffect(() => {
-        const getNames = async () => {
-            try {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=151`);
-                const data = await response.json();
-
-                setPokemones(data.results);
-            } catch (error) {
-                {
-                    `Ocurrió un error`;
-                }
-            }
-        };
-
         getNames();
     }, [setPokemones]);
+
+    const getNames = async () => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=151`);
+            const data = await response.json();
+
+            setPokemones(data.results);
+        } catch (error) {
+            {
+                `Ocurrió un error`;
+            }
+        }
+    };
 
     const handleClick = () => {
         if (!selectPoke) {
@@ -37,14 +37,13 @@ const PokeSelect = () => {
     return (
         <div className="poke-selector">
             <h1>SELECCIONA UN POKEMON</h1>
-            <select id="" className="poke-form" onChange={(e) => setSelectPoke(e.target.value)}>
+            <select id="pokemon-select" className="poke-form" onChange={(e) => setSelectPoke(e.target.value)}>
                 <option value="">POKEMONES</option>
-                {pokemones &&
-                    pokemones.map((pokemon) => (
-                        <option value={pokemon.name} key={pokemon.url}>
-                            {pokemon.name}
-                        </option>
-                    ))}
+                {pokemones.map((pokemon) => (
+                    <option value={pokemon.name} key={pokemon.url}>
+                        {pokemon.name}
+                    </option>
+                ))}
             </select>
             <button className="btn-poke" onClick={handleClick}>
                 VER
