@@ -10,7 +10,7 @@ const PokeSelect = () => {
     useEffect(() => {
         const getNames = async () => {
             try {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=151`);
                 const data = await response.json();
 
                 setPokemones(data.results);
