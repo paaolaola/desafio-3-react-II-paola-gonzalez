@@ -6,6 +6,7 @@ const PokeSelect = () => {
     const { pokemones, setPokemones } = useContext(PokeContext);
     const navigate = useNavigate();
     const [selectPoke, setSelectPoke] = useState("");
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         getNames();
@@ -18,9 +19,8 @@ const PokeSelect = () => {
 
             setPokemones(data.results);
         } catch (error) {
-            {
-                `Ocurrió un error`;
-            }
+            setError(`Ocurrió un error. Por favor inténtalo de nuevo.`);
+            console.error(error);
         }
     };
 
@@ -35,20 +35,24 @@ const PokeSelect = () => {
     if (pokemones.lenght === 0) return null;
 
     return (
-        <div className="poke-selector">
-            <h1>SELECCIONA UN POKEMON</h1>
-            <select id="pokemon-select" className="poke-form" onChange={(e) => setSelectPoke(e.target.value)}>
-                <option value="">POKEMONES</option>
-                {pokemones.map((pokemon) => (
-                    <option value={pokemon.name} key={pokemon.url}>
-                        {pokemon.name}
-                    </option>
-                ))}
-            </select>
-            <button className="btn-poke" onClick={handleClick}>
-                VER
-            </button>
-            <img className="poke-pika" src="./icons/Pokemon-3.png" alt="Pikachu" />
+        <div>
+            {error && <div style={{ color: "red" }}>{error}</div>}
+
+            <div className="poke-selector">
+                <h1>SELECCIONA UN POKEMON</h1>
+                <select id="pokemon-select" className="poke-form" onChange={(e) => setSelectPoke(e.target.value)}>
+                    <option value="">POKEMONES</option>
+                    {pokemones.map((pokemon) => (
+                        <option value={pokemon.name} key={pokemon.url}>
+                            {pokemon.name}
+                        </option>
+                    ))}
+                </select>
+                <button className="btn-poke" onClick={handleClick}>
+                    VER
+                </button>
+                <img className="poke-pika" src="./icons/Pokemon-3.png" alt="Pikachu" />
+            </div>
         </div>
     );
 };

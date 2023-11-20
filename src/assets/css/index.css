@@ -4,6 +4,7 @@ body {
     margin: 0;
     font-family: "Nunito", sans-serif;
     background-color: #fcd20b;
+    min-height: 100vh;
 }
 
 /*Navbar*/
@@ -145,18 +146,18 @@ button {
     margin-bottom: 4rem;
 }
 .poke-container-card {
+    background-color: rgb(48, 96, 183);
+
     border: 2px solid rgb(255, 87, 57);
     border-radius: 30px;
-    background-color: rgb(48, 96, 183);
-    width: 80%;
-    margin: auto;
+    margin: 4rem 10rem;
 }
 .poke-card {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(48, 96, 183);
-    width: 60%;
+    width: 70%;
     margin: auto;
 }
 .poke-img {
@@ -165,6 +166,8 @@ button {
     background-color: rgb(255, 87, 57);
     padding: 2rem 3rem;
     width: 200px;
+    height: 200px;
+    margin-right: 3rem;
 }
 .poke-title {
     background: rgb(48, 96, 183);
@@ -173,53 +176,34 @@ button {
 .poke-info {
     display: flex;
     flex-direction: column;
+    align-items: start;
     font-family: "Londrina Shadow", sans-serif;
     font-size: 25px;
     color: #fcd20b;
-    margin-left: 2rem;
 }
 .poke-details {
     display: flex;
-    flex-direction: row;
 }
 p {
     margin-right: 1rem;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 820px) {
     /*Card*/
     .poke-container-card {
-        border: 2px solid rgb(255, 87, 57);
         border-radius: 30px;
-        background-color: rgb(48, 96, 183);
         width: 80%;
         margin: auto;
     }
     .poke-card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(48, 96, 183);
-        width: 50%;
-        margin: auto;
     }
     .poke-img {
         width: 150px;
     }
 
     .poke-info {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-family: "Londrina Shadow", sans-serif;
-        font-size: 25px;
-        color: #fcd20b;
-        margin-left: 2rem;
-    }
-    .poke-details {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        align-items: center;
     }
 }
