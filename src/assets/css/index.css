@@ -147,15 +147,15 @@ button {
     color: rgb(48, 96, 183);
 }
 #pokemon-select {
-    color: rgb(48, 96, 183); /* Cambia el color del texto */
+    color: rgb(48, 96, 183);
     background-color: #fcd20b;
-    border-radius: 20px; /* Cambia el color de fondo */
+    border-radius: 20px;
     margin-top: 3rem;
 }
 
 #pokemon-select option {
-    color: red; /* Cambia el color del texto de las opciones */
-    background-color: white; /* Cambia el color de fondo de las opciones */
+    color: red;
+    background-color: white;
 }
 /*Card*/
 .btn-link {
@@ -195,7 +195,7 @@ button {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-20px); /* Ajusta la cantidad de flotación cambiando el valor */
+        transform: translateY(-20px);
     }
 }
 .poke-svg {
