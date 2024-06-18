@@ -210,18 +210,18 @@ p {
     margin-right: 1rem;
 }
 /*Responsive*/
-/*Home*/
-.poke-container h1 {
-    font-size: 30px;
-    margin: 2rem 0;
-}
-/*Selector*/
-.poke-selector h1 {
-    font-size: 30px;
-    margin: 2rem 0;
-}
-/*Card*/
-@media screen and (max-width: 280px) {
+@media screen and (min-width: 280px) and (max-width: 540px) {
+    /*Home*/
+    .poke-container h1 {
+        font-size: 30px;
+        margin: 2rem 0;
+    }
+    /*Selector*/
+    .poke-selector h1 {
+        font-size: 30px;
+        margin: 2rem 0;
+    }
+    /*Card*/
     .poke-container-card {
         border-radius: 30px;
         width: 80%;

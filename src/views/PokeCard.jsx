@@ -41,7 +41,7 @@ const PokeCard = () => {
                         <button className="btn-message">Volver a home</button>
                     </Link>
                     <Link to="/pokemones">
-                        <button className="btn-card">Volver a Pokemones</button>
+                        <button className="btn-card">Volver a Pokemones Originales</button>
                     </Link>
                 </div>
 

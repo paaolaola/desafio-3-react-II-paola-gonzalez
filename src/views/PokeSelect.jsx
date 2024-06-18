@@ -20,8 +20,8 @@ const PokeSelect = () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=151`);
             const data = await response.json();
-            // Se actualiza el estado pokemones con los nombres de los pokemones
-            setPokemones(data.results);
+            // Se actualiza el estado pokemones con los nombres de los pokemones ordenados alfabéticamente
+            setPokemones(data.results.sort((a, b) => a.name.localeCompare(b.name)));
             // Se limpia cualquier mensaje de error previo
             setError("");
             // Si ocurre un error se muestra un mensaje de error
