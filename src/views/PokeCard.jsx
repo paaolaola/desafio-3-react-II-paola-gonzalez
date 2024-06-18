@@ -1,27 +1,33 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// Se crea el componente PokeCard que recibe el nombre del pokemon como parámetro
 const PokeCard = () => {
+    // Se obtiene el nombre del pokemon de los parámetros de la URL
     const { nombre } = useParams();
+    // Se crean los estados pokes y error
     const [pokes, setPokes] = useState();
     const [error, setError] = useState(null);
-
+    // Se crea el useEffect que se ejecuta al montar el componente y obtiene los datos del pokemon
     useEffect(() => {
         getPokemons();
     }, [setPokes]);
     const getPokemons = async () => {
+        // Se obtienen los datos del pokemon de la API
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
             const json = await response.json();
 
             setPokes(json);
+            setError(""); // Limpiar cualquier mensaje de error previo
+            // Si no se encuentra el pokemon se muestra un mensaje de error
         } catch (error) {
             setError(`Ocurrió un error. Por favor inténtalo de nuevo.`);
-            console.error(error);
         }
     };
 
-    if (!pokes) return <></>;
+    // Si no se han obtenido los datos del pokemon se muestra un mensaje de error
+    if (!pokes) return <>Cargando...</>;
 
     const { sprites, name, height, weight, stats } = pokes;
     const title = { name };
@@ -42,7 +48,11 @@ const PokeCard = () => {
                 <div className="poke-container-card">
                     <h1 className="poke-title">{title.name[0].toUpperCase() + title.name.slice(1).toLowerCase()}</h1>
                     <div className="poke-card">
-                        <img className="poke-img" src={sprites.other.dream_world.front_default} alt={name}></img>
+                        <div className="poke-img">
+                            <div className="poke-svg-container">
+                                <img className="poke-svg" src={sprites.other.dream_world.front_default} alt={name}></img>
+                            </div>
+                        </div>
 
                         <div className="poke-info">
                             <p>HP: {stats[0].base_stat}</p>

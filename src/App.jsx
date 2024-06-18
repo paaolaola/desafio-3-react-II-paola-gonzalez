@@ -8,6 +8,7 @@ import PokeCard from "./views/PokeCard";
 import NotFound from "./views/NotFound";
 
 function App() {
+    // Se crea la estructura de las rutas de la aplicación
     return (
         <BrowserRouter>
             <PokeNav />

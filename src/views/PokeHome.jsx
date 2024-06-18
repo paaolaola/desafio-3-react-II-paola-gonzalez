@@ -9,7 +9,9 @@ const PokeHome = () => {
                     <Link to="/pokemones">
                         <img className="poke-pika" src="./icons/Pokemon-3.png" alt="Pikachu" />
                     </Link>
-                    <h5>Anda al selector de Pokemones Originales para ver sus características </h5>
+                </div>
+                <div className="footer">
+                    <p>Anda al selector de Pokemones Originales para ver sus características </p>
                 </div>
             </div>
         </section>

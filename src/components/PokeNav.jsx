@@ -4,7 +4,7 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 export default function PokeNav() {
     const PokeActiveClass = ({ isActive }) => (isActive ? "poke-active" : "poke-inactive");
     return (
-        <header>
+        <>
             <Navbar className="poke-nav">
                 <Link to="/">
                     <img className="poke-ball" src="../icons/pokeball.png" alt="Pokeball" />
@@ -15,13 +15,13 @@ export default function PokeNav() {
                         <NavLink className={PokeActiveClass} to="/">
                             Home
                         </NavLink>
-                        {" - "}
+
                         <NavLink className={PokeActiveClass} to="/pokemones">
-                            Pokemones
+                            Pokemones originales
                         </NavLink>
                     </Nav>
                 </Container>
             </Navbar>
-        </header>
+        </>
     );
 }

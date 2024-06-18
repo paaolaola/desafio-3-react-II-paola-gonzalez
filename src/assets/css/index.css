@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Nunito:wght@400;800&display=swap");
-
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
     font-family: "Nunito", sans-serif;
     background-color: #fcd20b;
     min-height: 100vh;
@@ -9,15 +12,15 @@ body {
 
 /*Navbar*/
 .poke-ball {
-    margin-left: 2rem;
     width: 50px;
+    padding: 10px;
 }
 .poke-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 87, 57);
-    padding: 1rem;
+    width: 100%;
 }
 
 h1 {
@@ -33,11 +36,13 @@ h1 {
     color: rgb(48, 96, 183);
     font-weight: 800;
     text-decoration: none;
+    padding: 0.5rem;
 }
 .poke-inactive {
     color: #fcd20b;
     font-weight: 800;
     text-decoration: none;
+    padding: 0.5rem;
 }
 
 /*Home*/
@@ -50,15 +55,14 @@ h1 {
     width: 100%;
 }
 
-h5 {
+.footer {
     font-family: "Londrina Shadow", sans-serif;
     font-size: 30px;
     color: #fcd20b;
     text-align: center;
-    width: 100%;
     background-color: rgb(255, 87, 57);
     padding: 4rem;
-    margin-top: auto;
+    width: 100%;
 }
 
 .poke-container {
@@ -138,6 +142,9 @@ button {
     border: 2px solid rgb(48, 96, 183);
     color: #fcd20b;
 }
+.text-select {
+    color: rgb(48, 96, 183);
+}
 
 /*Card*/
 .btn-link {
@@ -147,27 +154,42 @@ button {
 }
 .poke-container-card {
     background-color: rgb(48, 96, 183);
-
     border: 2px solid rgb(255, 87, 57);
     border-radius: 30px;
     margin: 4rem 10rem;
+    padding: 3rem;
 }
 .poke-card {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(48, 96, 183);
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    min-height: 50vh;
 }
 .poke-img {
     border: 2px solid #fcd20b;
     border-radius: 30px;
     background-color: rgb(255, 87, 57);
-    padding: 2rem 3rem;
-    width: 200px;
-    height: 200px;
+
+    width: 300px;
     margin-right: 3rem;
+}
+.poke-svg-container {
+    animation: floatAnimation 3s infinite alternate ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px); /* Ajusta la cantidad de flotación cambiando el valor */
+    }
+}
+.poke-svg {
+    width: 350px;
+    height: 350px;
 }
 .poke-title {
     background: rgb(48, 96, 183);
@@ -176,7 +198,7 @@ button {
 .poke-info {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: end;
     font-family: "Londrina Shadow", sans-serif;
     font-size: 25px;
     color: #fcd20b;
@@ -187,9 +209,19 @@ button {
 p {
     margin-right: 1rem;
 }
-
-@media screen and (max-width: 820px) {
-    /*Card*/
+/*Responsive*/
+/*Home*/
+.poke-container h1 {
+    font-size: 30px;
+    margin: 2rem 0;
+}
+/*Selector*/
+.poke-selector h1 {
+    font-size: 30px;
+    margin: 2rem 0;
+}
+/*Card*/
+@media screen and (max-width: 280px) {
     .poke-container-card {
         border-radius: 30px;
         width: 80%;
@@ -202,8 +234,42 @@ p {
     .poke-img {
         width: 150px;
     }
-
+    .poke-svg {
+        width: 150px;
+        height: 150px;
+    }
     .poke-info {
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    /*Card*/
+    .poke-title {
+        font-size: 40px;
+        margin-bottom: 1rem;
+    }
+    .poke-container-card {
+        border-radius: 30px;
+        width: 80%;
+        margin: auto;
+    }
+    .poke-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .poke-img {
+        width: 150px;
+        margin: auto;
+    }
+    .poke-svg {
+        width: 150px;
+        height: 150px;
+    }
+    .poke-info {
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        margin-top: 1rem;
     }
 }
